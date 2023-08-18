@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.5.1",
     "typescript": "^5.1.6"
   },
   "dependencies": {
     "@petfinder/petfinder-js": "^1.0.6",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "tsl-mastodon-api": "^0.4.0"
   }
 }
