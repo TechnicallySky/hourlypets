@@ -21,6 +21,3 @@ export class PetPoster {
     }
 }
 
-
-//Test animal ID:65254473
-//Pickles
