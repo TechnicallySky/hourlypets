@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "esnext",
+    "target": "esnext",
     "esModuleInterop": true,
-    "target": "es6",
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": false,
     "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist"
-  },
-  "lib": ["es2015"]
+    "allowSyntheticDefaultImports": true
+  }
 }

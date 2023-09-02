@@ -1,12 +1,13 @@
 import * as Mastodon from 'tsl-mastodon-api';
 import * as dotenv from 'dotenv';
-import { PetPoster } from './petposter';
+import { PetPoster } from './petposter.js';
 dotenv.config();
 
 
 
-const Mastodon_api_token =  process.env.Mastodon_api_token as string; 
-const Mastodon_api_url = process.env.Mastodon_api_url as string;
+const Mastodon_api_token =  process.env.MASTODON_API_KEY as string; 
+const Mastodon_api_url = process.env.MASTODON_API_URL as string;
+console.log(Mastodon_api_url);
 const petposter = new PetPoster;
 
 export class HourlyPoster {
