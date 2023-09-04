@@ -11,7 +11,7 @@ console.log(Mastodon_api_url);
 const petposter = new PetPoster;
 
 export class HourlyPoster {
-    Login() {
+    async Login() {
         const client = new Mastodon.API({
             access_token: Mastodon_api_token,
             api_url: Mastodon_api_url,
@@ -19,9 +19,12 @@ export class HourlyPoster {
         return client;
     }
     async Post(post_content: string){
-        const client = this.Login();
-        const result = await client.postStatus({status: post_content})
-
-
+        const client = await this.Login();
+        try {
+            const result = await client.postStatus({status: post_content})
+        }
+        catch (error) {
+            console.error("Error posting to Mastodon: " + JSON.stringify(error));
+        }
     }
 }
