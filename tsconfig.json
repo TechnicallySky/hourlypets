@@ -4,6 +4,7 @@
     "noImplicitAny": true,
     "module": "esnext",
     "target": "esnext",
+    "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": false,
