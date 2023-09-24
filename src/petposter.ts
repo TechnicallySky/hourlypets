@@ -1,6 +1,5 @@
 import * as dotenv from 'dotenv';
 import { Client } from "@petfinder/petfinder-js";
-import { Animal } from '@petfinder/petfinder-js/dist/api/animal';
 dotenv.config();
 
 
