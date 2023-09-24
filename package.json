@@ -18,8 +18,10 @@
   "dependencies": {
     "@petfinder/petfinder-js": "^1.0.6",
     "dotenv": "^16.3.1",
+    "install": "^0.13.0",
+    "masto": "^6.2.0",
     "nodemon": "^3.0.1",
-    "ts-node": "^10.9.1",
-    "tsl-mastodon-api": "^0.4.0"
+    "npm": "^10.1.0",
+    "ts-node": "^10.9.1"
   }
 }
