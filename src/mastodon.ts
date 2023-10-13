@@ -16,9 +16,11 @@ export class MastodonPoster {
         try {
             const full_photo_urls : string[] = photos.map((item) => item.full);
             const media_ids : string[] = [];
-            let i = 0;
-            for (const photo of full_photo_urls){
-                media_ids.push(await this.client.v1.media.create({file: await fetch(photo).then(res => res.blob())}).then(res => res.id))
+            //Only allowing 4 since Mastodon only current accepts 4 images at a time :( 
+            for (let i = 0; i < 4; i++){
+                if (full_photo_urls[i] !== undefined){
+                    media_ids.push(await this.client.v1.media.create({file: await fetch(full_photo_urls[i]).then(res => res.blob())}).then(res => res.id))
+                }
             }
             return media_ids;
     }
@@ -27,7 +29,6 @@ export class MastodonPoster {
         }
     }
     async Post(animal : AxiosResponse["data"]) {
-        console.log(await petposter.organizationlookup(animal.organization_id).then(res => res.name))
         try {
             this.client.v1.statuses.create({
                 status: animal.name + animal.description && `\n\n${animal.description}` + "\n\n" + animal.name + " is at " + await petposter.organizationlookup(animal.organization_id).then(res => res.name) 
